@@ -233,7 +233,7 @@ async function checkout() {
             delivery: deliveryData
         }),
         // Для тестовых платежей
-        provider_token: "1744374395:TEST:b9e5dafae00fa0210221 " 
+        provider_token: "1744374395:TEST:b9e5dafae00fa0210221" 
     };
 
     try {
