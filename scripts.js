@@ -237,7 +237,8 @@ async function checkout() {
     };
 
     try {
-        await createInvoiceLink(invoice);
+        const link = await tg.createInvoiceLink(invoice);
+        tg.showAlert(link);
         const result = await tg.openInvoice(invoice);
         
         tg.showAlert(result)
