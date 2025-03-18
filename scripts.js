@@ -231,7 +231,7 @@ async function checkout() {
             userId: tg.initDataUnsafe.user?.id,
             cart: state.cart,
             delivery: deliveryData
-        })
+        }),
         // Для тестовых платежей
         provider_token: "TEST:401643678:TEST:1111111111111111" 
     };
