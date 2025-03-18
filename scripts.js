@@ -111,7 +111,7 @@ function renderProducts() {
             <img src="${product.image}" 
                  class="product-image" 
                  alt="${product.name}"
-                 onerror="this.src='https://via.placeholder.com/300x200?text=No+Image'">
+                 onerror="this.src='images/flower.png'">
             <h3>${product.name}</h3>
             <p>${product.description}</p>
             <p>Цена: ${product.price.toLocaleString()} ₽</p>
@@ -164,6 +164,15 @@ function updateCart() {
     localStorage.setItem('cart', JSON.stringify(state.cart));
     renderProducts();
     renderCart();
+    
+    // Обновление счетчика корзины
+    const totalItems = state.cart.reduce((sum, item) => sum + item.quantity, 0);
+    document.getElementById('cart-counter').textContent = totalItems;
+}
+
+// Функции для работы с корзиной
+function toggleCart() {
+    document.getElementById('cart').classList.toggle('visible');
 }
 
 // Рендер корзины
@@ -235,10 +244,10 @@ async function checkout() {
         // Для тестовых платежей
         provider_token: "1744374395:TEST:b9e5dafae00fa0210221" 
     };
-
+    
+    tg.showAlert();
+    
     try {
-        const link = await tg.createInvoiceLink(invoice);
-        tg.showAlert(link);
         const result = await tg.openInvoice(invoice);
         
         tg.showAlert(result)

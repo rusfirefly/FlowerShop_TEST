@@ -8,33 +8,42 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
+    <header class="header">
+        <h1>🌸 Цветочная лавка</h1>
+        <div class="cart-icon" onclick="toggleCart()">
+            🛒
+            <span class="cart-counter" id="cart-counter">0</span>
+        </div>
+    </header>
+
     <div class="controls">
         <input type="text" class="search-box" placeholder="🔍 Поиск товаров...">
-        
         <div class="category-filter" id="categories"></div>
     </div>
 
     <div class="products" id="products"></div>
 
     <div class="cart" id="cart">
-        <h3>🛒 Корзина</h3>
-        <div id="cart-items"></div>
-        <p>Итого: <span id="total">0</span> ₽</p>
-        
-        <div class="delivery-options">
-            <h4>Способ доставки:</h4>
-            <select id="delivery-type">
-                <option value="pickup">Самовывоз</option>
-                <option value="courier">Доставка курьером</option>
-            </select>
-            
-            <div class="delivery-address" id="delivery-address">
-                <input type="text" id="address" placeholder="Адрес доставки">
-                <input type="date" id="delivery-date" placeholder="Дата доставки">
-            </div>
+        <div class="cart-header">
+            <h3>Ваша корзина</h3>
+            <button class="close-btn" onclick="toggleCart()">×</button>
         </div>
-
-        <button class="add-btn" id="checkout-btn">Оформить заказ</button>
+        <div id="cart-items"></div>
+        <div class="cart-footer">
+            <p>Итого: <span id="total">0</span> ₽</p>
+            <div class="delivery-options">
+                <h4>Способ доставки:</h4>
+                <select id="delivery-type">
+                    <option value="pickup">Самовывоз</option>
+                    <option value="courier">Доставка курьером</option>
+                </select>
+                <div class="delivery-address" id="delivery-address">
+                    <input type="text" id="address" placeholder="Адрес доставки">
+                    <input type="date" id="delivery-date" placeholder="Дата доставки">
+                </div>
+            </div>
+            <button class="checkout-btn" id="checkout-btn">Оформить заказ</button>
+        </div>
     </div>
 
     <div class="order-history" id="order-history">
@@ -42,6 +51,6 @@
         <div id="orders-list"></div>
     </div>
 
-    <script src="scripts.js?v=0.5"></script>
+    <script src="scripts.js?v=0.2"></script>
 </body>
 </html>
