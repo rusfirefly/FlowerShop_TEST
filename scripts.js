@@ -237,8 +237,9 @@ async function checkout() {
     };
 
     try {
-
+        await createInvoiceLink(invoice);
         const result = await tg.openInvoice(invoice);
+        
         tg.showAlert(result)
         if(result.status === 'paid') {
             saveOrder(result);
