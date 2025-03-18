@@ -235,8 +235,9 @@ async function checkout() {
     };
 
     try {
+        tg.showAlert(invoice)
         const result = await tg.openInvoice(invoice);
-        
+        tg.showAlert(result)
         if(result.status === 'paid') {
             saveOrder(result);
             tg.showAlert('Оплата прошла успешно!');
