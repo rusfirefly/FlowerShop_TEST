@@ -232,22 +232,24 @@ async function checkout() {
             cart: state.cart,
             delivery: deliveryData
         })
+        // Для тестовых платежей
+        provider_token: "TEST:401643678:TEST:1111111111111111" 
     };
 
     try {
-        tg.showAlert(invoice)
+
         const result = await tg.openInvoice(invoice);
         tg.showAlert(result)
         if(result.status === 'paid') {
             saveOrder(result);
-            tg.showAlert('Оплата прошла успешно!');
+            tg.showAlert('✅Оплата прошла успешно!');
             clearCart();
             tg.close();
         } else {
-            tg.showAlert('Оплата не была завершена');
+            tg.showAlert('❌Оплата не была завершена');
         }
     } catch (error) {
-        tg.showAlert('Ошибка оплаты: ' + error.message);
+        tg.showAlert('🚨Ошибка оплаты: ' + error.message);
     }
 }
 
