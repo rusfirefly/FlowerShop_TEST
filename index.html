@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flower Shop</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css?v=0.1">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <div class="controls">
+        <input type="text" class="search-box" placeholder="🔍 Поиск товаров...">
+        
+        <div class="category-filter" id="categories"></div>
+    </div>
+
+    <div class="products" id="products"></div>
+
+    <div class="cart" id="cart">
+        <h3>🛒 Корзина</h3>
+        <div id="cart-items"></div>
+        <p>Итого: <span id="total">0</span> ₽</p>
+        
+        <div class="delivery-options">
+            <h4>Способ доставки:</h4>
+            <select id="delivery-type">
+                <option value="pickup">Самовывоз</option>
+                <option value="courier">Доставка курьером</option>
+            </select>
+            
+            <div class="delivery-address" id="delivery-address">
+                <input type="text" id="address" placeholder="Адрес доставки">
+                <input type="date" id="delivery-date" placeholder="Дата доставки">
+            </div>
+        </div>
+
+        <button class="add-btn" id="checkout-btn">Оформить заказ</button>
+    </div>
+
+    <div class="order-history" id="order-history">
+        <h3>📦 История заказов</h3>
+        <div id="orders-list"></div>
+    </div>
+
+    <script src="scripts.js?v=0.1"></script>
+</body>
+</html>
