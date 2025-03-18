@@ -14,7 +14,7 @@ const products = [
         id: 1,
         name: "Розы",
         price: 2500,
-        image: "https://via.placeholder.com/300x200?text=Roses",
+        image: "images/flower.png",
         category: 1,
         description: "Букет из 11 алых роз"
     },
@@ -22,7 +22,7 @@ const products = [
         id: 2,
         name: "Тюльпаны",
         price: 1500,
-        image: "https://via.placeholder.com/300x200?text=Tulips",
+        image: "images/flower.png",
         category: 1,
         description: "Весенний букет"
     },
@@ -30,7 +30,7 @@ const products = [
         id: 3,
         name: "Фикус",
         price: 3000,
-        image: "https://via.placeholder.com/300x200?text=Ficus",
+        image: "images/flower.png",
         category: 2,
         description: "Комнатное растение в горшке"
     }
